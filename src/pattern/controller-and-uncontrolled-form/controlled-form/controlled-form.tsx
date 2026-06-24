@@ -1,0 +1,111 @@
+import { useState } from "react";
+
+export const ControlledForm = () => {
+  const [form, setForm] = useState({
+    fullname: "",
+    company: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(form);
+
+    setForm({
+      fullname: "",
+      company: "",
+      email: "",
+      phone: "",
+    });
+  };
+
+  return (
+    <section className="grid grid-col-1 md:grid-cols-2 gap-4 bg-[#0f1324] text-white p-12 rounded-2xl">
+      <div className="flex flex-col justify-center gap-4">
+        <h2 className="text-2xl font-bold">Meet with Cameron</h2>
+        <p>
+          Let us show you how Cypulse can transform the way you govern and share
+          your sensitive data.
+        </p>
+      </div>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="fullname" className="uppercase">
+            Full name
+          </label>
+          <input
+            onChange={handleChange}
+            className="border border-gray-400 p-2 rounded-md"
+            name="fullname"
+            id="fullname"
+            type="text"
+            placeholder="Fullname..."
+            required
+            value={form.fullname}
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="company" className="uppercase">
+            Company name
+          </label>
+          <input
+            onChange={handleChange}
+            className="border border-gray-400 p-2 rounded-md"
+            name="company"
+            id="company"
+            type="text"
+            placeholder="Company name..."
+            required
+            value={form.company}
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="email" className="uppercase">
+            Email
+          </label>
+          <input
+            onChange={handleChange}
+            className="border border-gray-400 p-2 rounded-md"
+            name="email"
+            id="email"
+            type="email"
+            placeholder="Your email..."
+            required
+            value={form.email}
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="phone" className="uppercase">
+            Phone
+          </label>
+          <input
+            onChange={handleChange}
+            className="border border-gray-400 p-2 rounded-md"
+            name="phone"
+            id="phone"
+            type="number"
+            placeholder="Your phone..."
+            required
+            value={form.phone}
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="bg-indigo-800  hover:bg-indigo-900  rounded-md py-2 px-2 text-white font-bold"
+        >
+          Submit form
+        </button>
+      </form>
+    </section>
+  );
+};
