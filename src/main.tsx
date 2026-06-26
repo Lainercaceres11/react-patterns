@@ -1,10 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+import { ThemeProvider } from "./pattern/provider-pattern/learn/providers/theme-provider.tsx";
 
-createRoot(document.getElementById('root')!).render(
+import AuthProvider from "./pattern/provider-pattern/task/provider/auth-provider.tsx";
+import LanguageProvider from "./pattern/provider-pattern/task/provider/language-provider.tsx";
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <AuthProvider>
+        <LanguageProvider>
+          <App />
+        </LanguageProvider>
+      </AuthProvider>
+    </ThemeProvider>
   </StrictMode>,
-)
+);

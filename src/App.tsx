@@ -1,13 +1,19 @@
 import "./App.css";
-import { HocDemo } from "./demos/hoc-demo";
-import { HooksDemo } from "./demos/hooks-demo";
+import { ProviderPatternDemo } from "./demos/provider-pattern-demo";
+
+import { useTheme } from "./pattern/provider-pattern/learn/hooks/useTheme";
 
 function App() {
+  const { theme } = useTheme();
   return (
-    <div className="max-w-7xl mx-auto py-2 px-2 space-y-2">
-      <HocDemo />
-      <hr />
-      <HooksDemo />
+    <div
+      style={{
+        backgroundColor: theme ? "#000" : "#fff",
+        color: theme ? "#fff" : "#000",
+        height: "100vh",
+      }}
+    >
+      <ProviderPatternDemo />
     </div>
   );
 }
