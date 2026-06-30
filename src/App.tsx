@@ -1,5 +1,5 @@
 import "./App.css";
-import { ProviderPatternDemo } from "./demos/provider-pattern-demo";
+import OptimisticUiDemo from "./demos/optimistic-ui-demo";
 
 import { useTheme } from "./pattern/provider-pattern/learn/hooks/useTheme";
 
@@ -13,7 +13,7 @@ function App() {
         height: "100vh",
       }}
     >
-      <ProviderPatternDemo />
+      <OptimisticUiDemo />
     </div>
   );
 }
