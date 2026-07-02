@@ -4,7 +4,7 @@ type Categories = "success" | "error" | "warning";
 
 const ButtonsNotifications = () => {
   const notify = (category: Categories) => {
-    eventBus.publish("notification", category);
+    eventBus.publish("add:notification", category);
   };
 
   return (
