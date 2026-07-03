@@ -1,5 +1,5 @@
 import "./App.css";
-import SlotPatternDemo from "./demos/slot-pattern-demo";
+import HookFactoryDemo from "./demos/hooks-factory-demo";
 
 import { useTheme } from "./pattern/provider-pattern/learn/hooks/useTheme";
 
@@ -14,7 +14,7 @@ function App() {
         height: "100vh",
       }}
     >
-      <SlotPatternDemo />
+      <HookFactoryDemo />
     </div>
   );
 }
