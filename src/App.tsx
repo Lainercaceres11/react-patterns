@@ -1,5 +1,5 @@
 import "./App.css";
-import { PubSubPatternDemo } from "./demos/pub-sub-pattern-demo";
+import SlotPatternDemo from "./demos/slot-pattern-demo";
 
 import { useTheme } from "./pattern/provider-pattern/learn/hooks/useTheme";
 
@@ -14,7 +14,7 @@ function App() {
         height: "100vh",
       }}
     >
-      <PubSubPatternDemo />
+      <SlotPatternDemo />
     </div>
   );
 }
