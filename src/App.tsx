@@ -1,5 +1,5 @@
 import "./App.css";
-import HookFactoryDemo from "./demos/hooks-factory-demo";
+import FacadePattern from "./demos/facade-pattern-demo";
 
 import { useTheme } from "./pattern/provider-pattern/learn/hooks/useTheme";
 
@@ -14,7 +14,7 @@ function App() {
         height: "100vh",
       }}
     >
-      <HookFactoryDemo />
+      <FacadePattern />
     </div>
   );
 }
