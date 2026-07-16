@@ -1,5 +1,6 @@
 import "./App.css";
-import ErrorBoundaryDemo from "./demos/error-boundary-demo";
+
+import SuspenseDemo from "./demos/suspense-demo";
 
 import { useTheme } from "./pattern/provider-pattern/learn/hooks/useTheme";
 
@@ -14,7 +15,7 @@ function App() {
         height: "100vh",
       }}
     >
-      <ErrorBoundaryDemo />
+      <SuspenseDemo />
     </div>
   );
 }
